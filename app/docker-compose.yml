@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: app_container
+    depends_on:
+      - db
+    links:
+      - db
+    entrypoint: "./wait-for-it.sh db:5432 -- python -m app"
+
+  db:
+    image: postgres:latest
+    container_name: test_container
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=testdb
+    volumes:
+      - ../db/init_scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "pg_isready -U postgres -d testdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: always
