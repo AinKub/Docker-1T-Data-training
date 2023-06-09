@@ -5,3 +5,6 @@
 2. Build image by using command `docker build -t test_image:latest .`
 3. Run container - `docker run -d -p 5432:5432 --name test_container test_image:latest`
 4. Check the container by using `docker ps`
+
+Finally, the result will be as follows:
+![Worked postgres](img/worked_postgres.png)
