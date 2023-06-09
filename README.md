@@ -54,3 +54,6 @@ Connect and check result:\
 1. Move to db folder - `cd db` if you're not there yet
 2. Start container using `docker-compose up -d`
 3. Check result - `docker-compose ps`
+
+## Running two test containers in a bundle and sequentially using docker-compose
+This example you can see [here](./app/README.md)
