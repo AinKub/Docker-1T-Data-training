@@ -49,3 +49,8 @@ Next, stop container and run it again:\
 
 Connect and check result:\
 ![Adding volume result](img/adding_volume_result.png)
+
+## Running test database using docker-compose
+1. Move to db folder - `cd db` if you're not there yet
+2. Start container using `docker-compose up -d`
+3. Check result - `docker-compose ps`
