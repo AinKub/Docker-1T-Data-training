@@ -27,14 +27,14 @@ test_db=# SELECT * FROM index_mass;
 ## Connecting volumes or how to save the added values to the table if you delete the container and create it again ##
 When starting the docker container, you need to run it with the following command:
 ```
-docker run -d -p 5432:5432 -v /data:/var/lib/postgresql/data --name test_container test_image:latest
+docker run -d -p 5432:5432 -v ./data:/var/lib/postgresql/data --name test_container test_image:latest
 ```
 If you have working container (check it by using `docker ps`), stop and delete it. Then use the command above.
 For example:
 ```
 docker stop test_container
 docker rm test_container
-docker run -d -p 5432:5432 -v /data:/var/lib/postgresql/data --name test_container test_image:latest
+docker run -d -p 5432:5432 -v ./data:/var/lib/postgresql/data --name test_container test_image:latest
 ```
 ![Stop, delete and run](img/stop_delete_and_run.png)
 
