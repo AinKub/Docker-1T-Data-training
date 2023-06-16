@@ -1,7 +1,8 @@
 # Running two containers sequentially
 
 ## Running containers
-To run it, just go to this directory and enter the `docker-compose up` command
+To run it, just go to this directory and enter the `docker-compose up` command.
+But first, set the permissions to execute the wait-for-it.sh script by using command `chmod +x wait-for-it.sh`
 
 ## About
 Two containers are created in conjunction - one with a database, db service, and the second with a python application - app service.
